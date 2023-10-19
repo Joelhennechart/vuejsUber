@@ -6,7 +6,7 @@ import Home from './page/Home.vue';
 import Restaurant from './page/Restaurant.vue';
 const routes = [
     { path: '/', component: Home },
-    { path: '/Restaurant', component: Restaurant },
+    { name: 'Restaurant',path: '/restaurant/:name', component: Restaurant },
 ]
     const router = createRouter({
         history: createWebHashHistory(),
