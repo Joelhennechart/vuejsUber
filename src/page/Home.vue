@@ -5,8 +5,8 @@
           <div class="wrapper--input">
               <input v-model="user_search_restaurant" type="text" placeholder="Votre restaurant préféré ici...">
               <div class="search">
-                 <router-link to="/restaurant">
-                    <div v-for="(restaurant, i) in search_restaurant" :key="i" class="container--restaurant--search">
+                 <router-link v-for="(restaurant, i) in search_restaurant" :key="i" :to="{name: 'Restaurant', params: { name: restaurant.name }}">
+                    <div  class="container--restaurant--search">
                       <div class="wrapper--img">
                           <img :src="restaurant.image" alt="" srcset="">
                       </div>
@@ -25,7 +25,7 @@
   
   <script>
   //IMPORT
-  import BDD from '../bdd';
+  import BDD from '../Bdd';
   import {onMounted, ref, watch} from 'vue';
   
   // COMPONENTS
